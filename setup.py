@@ -13,6 +13,7 @@ NAME = 'asterisk_exporter'
 DESCRIPTION = 'Prometheus exporter for Asterisk.'
 URL = 'https://github.com/sensorberg/asterisk-exporter'
 EMAIL = 'infrastucture@sensorberg.com'
+AUTHOR = 'sensorberg-infra'
 REQUIRES_PYTHON = '>=3.5'
 
 # What packages are required for this module to be executed?
