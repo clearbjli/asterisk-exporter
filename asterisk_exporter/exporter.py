@@ -69,7 +69,7 @@ def start_server(host, port, user, password):
     channels_counter = Counter('asterisk_channels_total',
                                'Total number of created channels',
                                ['type'])
-    current_channels_gauge.labels('IAX').set(0)
+    current_channels_gauge.labels('IAX2').set(0)
     current_channels_gauge.labels('PJSIP').set(0)
     current_channels_gauge.labels('SIP').set(0)
     manager.connect()
