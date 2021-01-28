@@ -72,5 +72,8 @@ def start_server(host, port, user, password):
     current_channels_gauge.labels('IAX2').set(0)
     current_channels_gauge.labels('PJSIP').set(0)
     current_channels_gauge.labels('SIP').set(0)
+    channels_counter.labels('IAX2')
+    channels_counter.labels('PJSIP')
+    channels_counter.labels('SIP')
     manager.connect()
     manager.loop.run_forever()
