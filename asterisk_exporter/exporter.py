@@ -65,10 +65,10 @@ def start_server(host, port, user, password):
                               ['proto', 'peer'])
     current_channels_gauge = Gauge('asterisk_current_channels',
                                   'Number of active channels',
-                                  ['type'])
+                                  ['channel_type'])
     channels_counter = Counter('asterisk_channels_total',
                                'Total number of created channels',
-                               ['type'])
+                               ['channel_type'])
     current_channels_gauge.labels('IAX2').set(0)
     current_channels_gauge.labels('PJSIP').set(0)
     current_channels_gauge.labels('SIP').set(0)
