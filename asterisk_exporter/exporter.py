@@ -50,14 +50,14 @@ def start_server(host, port, user, password):
     def on_channel_creation(manager, msg):
         log.debug(msg)
         channel_type = msg.Channel.split('/')[0]
-        current_channels_gauge.labels(type=channel_type).inc()
-        channels_counter.labels(type=channel_type).inc()
+        current_channels_gauge.labels(channel_type=channel_type).inc()
+        channels_counter.labels(channel_type=channel_type).inc()
 
     @manager.register_event('Hangup')
     def on_channel_deletion(manager, msg):
         log.debug(msg)
         channel_type = msg.Channel.split('/')[0]
-        current_channels_gauge.labels(type=channel_type).dec()
+        current_channels_gauge.labels(channel_type=channel_type).dec()
 
     start_http_server(port, host)
     peer_status_gauge = Gauge('asterisk_peer_status',
